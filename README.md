@@ -30,16 +30,17 @@ If you want you can contruct as required like:
 $ics = new ICS('//Company//Product//EN');
 
 $ics->startDate($startTimestamp)
-		->endDate($endTimestamp)
-		->address($addressString)
-		->summary($summaryString)
-		->uri($uriString)
-		->description($descriptionString);
+    ->endDate($endTimestamp)
+    ->address($addressString)
+    ->summary($summaryString)
+    ->uri($uriString)
+    ->description($descriptionString);
 ```
 
 __Get the markup as string:__
 
 ```php
+$ics->get();
 ```
 
 __Save file to file:__
