@@ -100,41 +100,30 @@ class ICS
 		{
 			case 'startDate':
 				$this->_d_start = $value;
-				return $this;
 				break;
 
 			case 'endDate':
 				$this->_d_end = $value;
-				return $this;
 				break;
 
 			case 'address':
 				$this->_s_address = $value;
-				return $this;
 				break;
 
 			case 'summary':
 				$this->_s_summary = $value;
-				return $this;
 				break;
 
 			case 'uri':
 				$this->_s_uri = $value;
-				return $this;
 				break;
 
 			case 'description':
 				$this->_s_description = $value;
-				return $this;
 				break;
 
 			case 'path':
 				$this->_s_file_path = $value;
-				return $this;
-				break;
-
-			default:
-				throw new Exception('Param missed');
 				break;
 		}
 
@@ -178,10 +167,6 @@ class ICS
 
 			case 'path':
 				return $this->_s_file_path;
-				break;
-
-			default:
-				throw new Exception('Param missed');
 				break;
 		}
 	}
