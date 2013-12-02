@@ -6,9 +6,9 @@ class ICS
 {
 	/* * 
 	 * Variables have the following structure:
-	 * _        Scope (private and protected variables with underscore)
+	 * _                                                    Scope (private and protected variables with underscore)
 	 * (d) date/(s) string/(i) integer/(b) bool/(o) object  Initials for the type
-	 * name     Name
+	 * name                                                 Name
 	 */
 
 	/**
@@ -30,6 +30,11 @@ class ICS
 	 * @var $_s_description
 	 */
 	private $_s_description;
+
+	/**
+	 * @var $_s_html
+	 */
+	private $_s_html;
 
 	/**
 	 * @var $_s_uri
@@ -122,6 +127,10 @@ class ICS
 				$this->_s_description = $value;
 				break;
 
+			case 'html':
+				$this->_s_html = $value;
+				break;
+
 			case 'path':
 				$this->_s_file_path = $value;
 				break;
@@ -163,6 +172,10 @@ class ICS
 
 			case 'description':
 				return $this->_s_description;
+				break;
+
+			case 'html':
+				return $this->_s_html;
 				break;
 
 			case 'path':
@@ -237,6 +250,7 @@ class ICS
 				 "SUMMARY:New ".$this->_escapeString($this->summary)."\n".
 				 "LOCATION:".$this->_escapeString($this->address)."\n".
 				 "DESCRIPTION:".$this->_escapeString($this->description)."\n".
+				 "X-ALT-DESC;FMTTYPE=text/html:".$this->_escapeString($this->html)."\n".
 				 "URL;VALUE=URI:".$this->_escapeString($this->uri)."\n".
 				 "UID:".uniqid()."\n".
 				 "SEQUENCE:0\n".
